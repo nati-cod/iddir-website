@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Iddir Management System
 
 A modern, feature-rich web application for managing Iddirs (traditional Ethiopian community associations). Built with vanilla JavaScript, HTML5, and CSS3, featuring stunning animations and a beautiful UI/UX.
@@ -112,3 +113,6 @@ All rights reserved.
 
 Developed with modern web technologies and best practices for a beautiful, animated user experience.
 
+=======
+# iddir-website
+>>>>>>> d09a7e50027062507a43610efb454e0ed90e07c3
