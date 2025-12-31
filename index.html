@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iddir Management System</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/dark-mode.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-trail"></div>
+
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="liquid-shape"></div>
+        <div class="liquid-shape"></div>
+        <div class="liquid-shape"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-nav">
+        <div class="nav-container">
+            <div class="logo-container">
+                <h1 class="logo-text kinetic-text">Iddir</h1>
+                <span class="logo-subtitle">Management System</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#search" class="nav-link">Search</a></li>
+                <li><a href="#create" class="nav-link">Create</a></li>
+                <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="theme-icon" viewBox="0 0 24 24">
+                        <path class="sun" d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm0-2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="auth-btn" id="authBtn">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Off-Canvas Menu (Mobile) -->
+    <div class="menu-overlay"></div>
+    <div class="off-canvas-menu" id="offCanvasMenu">
+        <div class="menu-content">
+            <button class="menu-close" id="menuClose">&times;</button>
+            <ul class="mobile-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#search">Search</a></li>
+                <li><a href="#create">Create</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section parallax-section">
+            <div class="hero-content">
+                <h1 class="hero-title split-text">
+                    <span class="word">Iddir</span>
+                    <span class="word">Management</span>
+                    <span class="word">System</span>
+                </h1>
+                <p class="hero-subtitle fade-in-up">Traditional Ethiopian community association for mutual aid and support</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary neon-glow" id="getStartedBtn">Get Started</button>
+                    <button class="btn-secondary" id="learnMoreBtn">Learn More</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card glass-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Community Support</h3>
+                    <p>Mutual aid during times of crisis</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section id="search" class="search-section scroll-reveal">
+            <div class="container">
+                <h2 class="section-title kinetic-text">Search Iddirs</h2>
+                <p class="section-subtitle">Find public or private iddirs by name</p>
+                
+                <div class="search-container glass-card">
+                    <div class="search-tabs">
+                        <button class="tab-btn active" data-tab="public">Public Search</button>
+                        <button class="tab-btn" data-tab="private">Private Search</button>
+                    </div>
+                    
+                    <div class="search-content">
+                        <div class="tab-panel active" id="publicSearch">
+                            <form class="search-form" id="publicSearchForm">
+                                <div class="form-group">
+                                    <label>Iddir Name</label>
+                                    <input type="text" class="form-input" placeholder="Enter iddir name..." required>
+                                </div>
+                                <button type="submit" class="btn-primary neon-glow">Search</button>
+                            </form>
+                        </div>
+                        
+                        <div class="tab-panel" id="privateSearch">
+                            <form class="search-form" id="privateSearchForm">
+                                <div class="form-group">
+                                    <label>Iddir Name</label>
+                                    <input type="text" class="form-input" placeholder="Enter iddir name..." required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" class="form-input" placeholder="Enter password..." required>
+                                </div>
+                                <button type="submit" class="btn-primary neon-glow">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Create Iddir Section -->
+        <section id="create" class="create-section scroll-reveal">
+            <div class="container">
+                <h2 class="section-title kinetic-text">Create Your Iddir</h2>
+                <p class="section-subtitle">Start a new iddir and manage your community</p>
+                
+                <div class="create-form-container glass-card">
+                    <form class="iddir-form" id="iddirForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Iddir Name <span class="required">*</span></label>
+                                <input type="text" class="form-input" name="iddirName" placeholder="Enter iddir name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Admin Name <span class="required">*</span></label>
+                                <input type="text" class="form-input" name="adminName" placeholder="Enter admin name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Calendar Type <span class="required">*</span></label>
+                                <select class="form-input" name="calendarType" required>
+                                    <option value="gregorian">Gregorian</option>
+                                    <option value="ethiopian">Ethiopian</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Monthly Payment (Birr) <span class="required">*</span></label>
+                                <input type="number" class="form-input" name="monthlyPayment" placeholder="0.00" step="0.01" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Penalty Amount (Birr) <span class="required">*</span></label>
+                                <input type="number" class="form-input" name="penaltyAmount" placeholder="0.00" step="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Visibility <span class="required">*</span></label>
+                                <select class="form-input" name="visibility" required>
+                                    <option value="public">Public</option>
+                                    <option value="private">Private</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Password <span class="required">*</span></label>
+                                <input type="password" class="form-input" name="password" placeholder="Set password" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password <span class="required">*</span></label>
+                                <input type="password" class="form-input" name="confirmPassword" placeholder="Confirm password" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary neon-glow btn-morph">Create Iddir</button>
+                            <button type="reset" class="btn-secondary">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="dashboard-section scroll-reveal">
+            <div class="container">
+                <h2 class="section-title kinetic-text">Your Dashboard</h2>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-card glass-card hover-lift">
+                        <div class="card-icon">📊</div>
+                        <h3>My Iddirs</h3>
+                        <p>Manage your created and joined iddirs</p>
+                        <button class="card-btn">View All</button>
+                    </div>
+                    
+                    <div class="dashboard-card glass-card hover-lift">
+                        <div class="card-icon">👥</div>
+                        <h3>Members</h3>
+                        <p>View and manage members</p>
+                        <button class="card-btn">Manage</button>
+                    </div>
+                    
+                    <div class="dashboard-card glass-card hover-lift">
+                        <div class="card-icon">💰</div>
+                        <h3>Payments</h3>
+                        <p>Track payments and penalties</p>
+                        <button class="card-btn">View</button>
+                    </div>
+                    
+                    <div class="dashboard-card glass-card hover-lift">
+                        <div class="card-icon">📈</div>
+                        <h3>Reports</h3>
+                        <p>Generate financial reports</p>
+                        <button class="card-btn">Generate</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Iddir Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Skeleton Loader -->
+    <div class="skeleton-loader" id="skeletonLoader">
+        <div class="skeleton-header"></div>
+        <div class="skeleton-content">
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/cursor.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/scroll-effects.js"></script>
+    <script src="js/form-handler.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+
